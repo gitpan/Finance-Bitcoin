@@ -1,13 +1,17 @@
 package Finance::Bitcoin::API;
 
+use 5.010;
+use common::sense;
 use Class::Accessor 'antlers';
 use JSON::RPC::Client;
 use Scalar::Util qw[blessed];
 
-our $VERSION = '0.002';
+our $VERSION = '0.003';
+
+BEGIN { foreach my $method (qw[endpoint jsonrpc error]) { eval "sub $method {}" } } # make visible to Pod::Coverage
 
 has endpoint => (is => 'rw');
-has jsonrpc  => (is => 'rw');
+has jsonrpc  => (is => 'ro');
 has error    => (is => 'rw');
 
 sub new
@@ -21,6 +25,8 @@ sub new
 sub call
 {
 	my ($self, $method, @params) = @_;
+
+	$self->error(undef);
 	
 	my $return = $self->jsonrpc->call($self->endpoint, {
 		method    => $method,
@@ -77,6 +83,16 @@ Constructor. %args is a hash of named arguments. You need to provide the
 
 Call a method. If successful returns the result; otherwise returns undef.
 
+=item C<< endpoint >>
+
+Get/set the endpoint URL.
+
+=item C<< jsonrpc >>
+
+Retrieve a reference to the L<JSON::RPC::Client> object being used. In particular
+C<< $api->jsonrpc->ua >> can be useful if you need to alter timeouts or HTTP proxy
+settings.
+
 =item C<< error >>
 
 Returns the error message (if any) that resulted from the last C<call>.
@@ -99,7 +115,7 @@ Toby Inkster E<lt>tobyink@cpan.orgE<gt>.
 
 =head1 COPYRIGHT
 
-Copyright 2010 Toby Inkster
+Copyright 2010-2011 Toby Inkster
 
 This library is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

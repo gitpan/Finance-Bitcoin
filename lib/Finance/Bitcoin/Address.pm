@@ -1,11 +1,15 @@
 package Finance::Bitcoin::Address;
 
+use 5.010;
+use common::sense;
 use Carp;
 use Class::Accessor 'antlers';
 use Finance::Bitcoin;
 use Scalar::Util qw[blessed];
 
-our $VERSION = '0.002';
+our $VERSION = '0.003';
+
+BEGIN { foreach my $method (qw[api address]) { eval "sub $method {}" } } # make visible to Pod::Coverage
 
 has address => (is => 'ro');
 has api     => (is => 'rw');
@@ -96,6 +100,12 @@ Get/set the address label.
 Returns the total amount received via this address, with at least $minconf
 confirmations. $minconf defaults to 1.
 
+=item C<< api >>
+
+Retrieve a reference to the L<Finance::Bitcoin::API> object being used.
+
+=back
+
 =head1 BUGS
 
 Please report any bugs to L<http://rt.cpan.org/>.
@@ -112,7 +122,7 @@ Toby Inkster E<lt>tobyink@cpan.orgE<gt>.
 
 =head1 COPYRIGHT
 
-Copyright 2010 Toby Inkster
+Copyright 2010-2011 Toby Inkster
 
 This library is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
