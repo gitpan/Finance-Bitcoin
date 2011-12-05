@@ -3,35 +3,45 @@ package Finance::Bitcoin::Address;
 use 5.010;
 use common::sense;
 use Carp;
-use Class::Accessor 'antlers';
 use Finance::Bitcoin;
+use Any::Moose;
+use Object::AUTHORITY;
 use Scalar::Util qw[blessed];
 
-our $VERSION = '0.003';
-
-BEGIN { foreach my $method (qw[api address]) { eval "sub $method {}" } } # make visible to Pod::Coverage
+BEGIN {
+	$Finance::Bitcoin::Address::AUTHORITY = 'cpan:TOBYINK';
+	$Finance::Bitcoin::Address::VERSION   = '0.004';
+}
 
 has address => (is => 'ro');
 has api     => (is => 'rw');
 
-sub new
+around BUILDARGS => sub
 {
-	my ($class, $api, $address) = @_;
-	
-	unless (blessed($api) and $api->isa('Finance::Bitcoin::API'))
+	my $orig  = shift;
+	my $class = shift;
+
+	if (scalar @_ == 2
+	and $_[1] =~ /^1/
+	and (blessed($_[0]) || $_[0] =~ /^http/))
 	{
-		$api = $api ? 
-			Finance::Bitcoin::API->new(endpoint=>"$api") : 
-			Finance::Bitcoin::API->new;
+		my ($api, $address) = @_;
+
+		unless (blessed($api) and $api->isa('Finance::Bitcoin::API'))
+		{
+			$api = $api ? 
+				Finance::Bitcoin::API->new(endpoint=>"$api") : 
+				Finance::Bitcoin::API->new;
+		}
+
+		return $class->$orig(api => $api, address => $address);
 	}
 	
-	my $self = bless {
-		api     => $api,
-		address => $address,
-		}, $class;
-	
-	return $self;
-}
+	else
+	{
+		return $class->$orig(@_);
+	}
+};
 
 sub label
 {

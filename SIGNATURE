@@ -14,10 +14,10 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 aa549d941a5159165a38fb6cbf4b937a7b45bee2 Changes
+SHA1 984c85f79bf662ae6d2f146ca4fc91a7ad427869 Changes
 SHA1 f3296a09eb07898f3ba6dd0ece615dafc1b57e16 LICENSE
 SHA1 e608dc6634b0a8f7cbc056ad8b7764fdb0252466 MANIFEST
-SHA1 53f1e336a323153ed606840dc03363f69eed0359 META.yml
+SHA1 3972ec4b2fbbded6d136931d5153494488811256 META.yml
 SHA1 5391cc35db658809505db2be59d47aa2f073c376 Makefile.PL
 SHA1 66b7815e196048f555c8f44a565aca48c4e18295 README
 SHA1 a8e74deb9ea3ddb60b6385baeeff9d85fa2d693c TODO
@@ -38,22 +38,22 @@ SHA1 b86d0385e10881db680d28bde94f275e49e34a27 inc/Module/Install/TrustMetaYml.pm
 SHA1 1326052d1df1065debee74f9d8583a734b9b3d00 inc/Module/Install/Win32.pm
 SHA1 bb607f3715c40fc3bc1c46496587cdb215bc4fa2 inc/Module/Install/WriteAll.pm
 SHA1 26d58a041cd6b3d21db98b32e8fd1841aae21204 inc/Module/Package.pm
-SHA1 4db02ca3854a0d95bf38139e9b714cc85b618189 inc/Module/Package/Dist/RDF.pm
+SHA1 6b807287940754cc31a3db59f2b22e363d5525be inc/Module/Package/Dist/RDF.pm
 SHA1 775bd24f2fdbb6dce51a8b5b0cdb01fccfce83c4 inc/Scalar/Util.pm
 SHA1 b1b664983568bf822c327599eb88e223483ae96a inc/Scalar/Util/PP.pm
 SHA1 eef6bff62046bff2ce08ba132d0b58fba30f40b4 inc/YAML/Tiny.pm
-SHA1 3c8cbd6df68085b6f7bb91fe3672db60f7a86ff8 lib/Finance/Bitcoin.pm
-SHA1 a4078fcedd1fd22a0ee2fa337b8472ab36ba9fcf lib/Finance/Bitcoin/API.pm
-SHA1 b8c19bf265bed79802b9441500e55df00ab671f7 lib/Finance/Bitcoin/Address.pm
-SHA1 23830f2bb8e09d380e8b8005f04dae044f703ade lib/Finance/Bitcoin/Wallet.pm
-SHA1 e7860e317d1ba5e994e102737248729454abbef5 meta/changes.ttl
+SHA1 f5e6108ce7b8da158cf364af77daa91bdb918f8e lib/Finance/Bitcoin.pm
+SHA1 a59aaeb8a946e612aa9ca68cb5c7c3b8d6f905ce lib/Finance/Bitcoin/API.pm
+SHA1 199f92995534d0a6e447c618c85476cd22770df5 lib/Finance/Bitcoin/Address.pm
+SHA1 51152ee00fedf4da3e7dd7a5c76d80b5c02e06e5 lib/Finance/Bitcoin/Wallet.pm
+SHA1 57b15c56d609912435bdd68d2522ffe3a559771b meta/changes.ttl
 SHA1 a2a56cc4a38e1975b4d4d2eab64457cc1989809f meta/doap.ttl
-SHA1 2da259e2b546433ab74d6d26c221a9366ac421de meta/makefile.ttl
-SHA1 ed52d8f31e8a4dd270a22b4bea507aff32db0a78 t/01basic.t
+SHA1 51623f5e7588a943f4b21e1011a4966e1ce18578 meta/makefile.ttl
+SHA1 c265facdc2053784bd7500afb7aa8e9350580a68 t/01basic.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.10 (GNU/Linux)
 
-iEYEARECAAYFAk6UGXkACgkQzr+BKGoqfTn9IgCeOm2Kt4KTiKK5cwy0ojeMgCP6
-ipcAoKkKmEKqK0rUjOfgBxBT3Oe6nwGm
-=V9jA
+iEYEARECAAYFAk7dPZYACgkQzr+BKGoqfTlrQQCgiFU4gPNu0hTWL7rg50ztf5xc
+rcgAn165WDD4XKDxZQE9qIYA4wJMd7a1
+=yGi9
 -----END PGP SIGNATURE-----

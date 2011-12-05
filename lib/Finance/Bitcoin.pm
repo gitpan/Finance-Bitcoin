@@ -5,8 +5,12 @@ use common::sense;
 use Finance::Bitcoin::API;
 use Finance::Bitcoin::Wallet;
 use Finance::Bitcoin::Address;
+use Object::AUTHORITY;
 
-our $VERSION = '0.003';
+BEGIN {
+	$Finance::Bitcoin::AUTHORITY = 'cpan:TOBYINK';
+	$Finance::Bitcoin::VERSION   = '0.004';
+}
 
 1;
 
