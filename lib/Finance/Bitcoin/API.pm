@@ -1,45 +1,47 @@
 package Finance::Bitcoin::API;
 
-use 5.010;
-use common::sense;
-use JSON::RPC::Client;
-use Any::Moose;
-use Object::AUTHORITY;
-use Scalar::Util qw[blessed];
-
 BEGIN {
 	$Finance::Bitcoin::API::AUTHORITY = 'cpan:TOBYINK';
-	$Finance::Bitcoin::API::VERSION   = '0.004';
+	$Finance::Bitcoin::API::VERSION   = '0.900';
 }
 
-has endpoint => (is => 'rw', default => sub { 'http://127.0.0.1:8332/' });
-has jsonrpc  => (is => 'ro', default => sub { JSON::RPC::Client->new }, lazy => 1 );
-has error    => (is => 'rw');
+use 5.010;
+use Moo;
+
+use JSON::RPC::Client;
+use Moo;
+use Object::AUTHORITY;
+use Scalar::Util qw( blessed );
+
+has endpoint => (is => "rw",   default => sub { "http://127.0.0.1:8332/" });
+has jsonrpc  => (is => "lazy", default => sub { "JSON::RPC::Client"->new });
+has error    => (is => "rwp");
 
 sub call
 {
-	my ($self, $method, @params) = @_;
-
-	$self->error(undef);
+	my $self = shift;
+	my ($method, @params) = @_;
+	
+	$self->_set_error(undef);
 	
 	my $return = $self->jsonrpc->call($self->endpoint, {
 		method    => $method,
 		params    => \@params,
-		});
+	});
 	
-	if (blessed($return) and $return->can('is_success') and $return->is_success)
+	if (blessed $return and $return->can('is_success') and $return->is_success)
 	{
-		$self->error(undef);
+		$self->_set_error(undef);
 		return $return->result;
 	}
-	elsif (blessed($return) and $return->can('error_message'))
+	elsif (blessed $return and $return->can('error_message'))
 	{
-		$self->error($return->error_message);
+		$self->_set_error($return->error_message);
 		return;
 	}
 	else
 	{
-		$self->error(sprintf('HTTP %s', $self->jsonrpc->status_line));
+		$self->_set_error(sprintf('HTTP %s', $self->jsonrpc->status_line));
 		return;
 	}
 }
@@ -109,8 +111,13 @@ Toby Inkster E<lt>tobyink@cpan.orgE<gt>.
 
 =head1 COPYRIGHT
 
-Copyright 2010-2011 Toby Inkster
+Copyright 2010, 2011, 2013 Toby Inkster
 
 This library is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
 
+=head1 DISCLAIMER OF WARRANTIES
+
+THIS PACKAGE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED
+WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
+MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.

@@ -1,5 +1,5 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.66.
+signed via the Module::Signature module, version 0.70.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
@@ -14,46 +14,51 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 984c85f79bf662ae6d2f146ca4fc91a7ad427869 Changes
-SHA1 f3296a09eb07898f3ba6dd0ece615dafc1b57e16 LICENSE
-SHA1 e608dc6634b0a8f7cbc056ad8b7764fdb0252466 MANIFEST
-SHA1 3972ec4b2fbbded6d136931d5153494488811256 META.yml
-SHA1 5391cc35db658809505db2be59d47aa2f073c376 Makefile.PL
-SHA1 66b7815e196048f555c8f44a565aca48c4e18295 README
+SHA1 8ceed6ba74e79bf36435b85311003d68825ba84c COPYRIGHT
+SHA1 3426fd465e0ba7dc583faefd2cec46583a1ecb77 Changes
+SHA1 58e47fed556f626572681c48158a3ecd44ce179d HACKING
+SHA1 937d452c5c4069f4cda9ffaf45a33f1eb5f060e8 LICENSE
+SHA1 463c58fd3536e894a20c87bb1a25f10335c4c91c MANIFEST
+SHA1 a057294a59823d94d998e74c5c5cf46b7dd0a767 META.ttl
+SHA1 04febc4137e1a50e3aaf2c8730557578ac321978 META.yml
+SHA1 7d65b6447bdb20b1734b465650073c4b6989ea0c Makefile.PL
+SHA1 a1cb83c50901f37aab3d7b5194eb596ab71f794c README
 SHA1 a8e74deb9ea3ddb60b6385baeeff9d85fa2d693c TODO
-SHA1 caf7e6f213b3966d9426168afb582326e77ac6f8 examples/FB_high_level_api.pl
+SHA1 11b378b3511f761e64810c595db5cbd859aa9ff3 examples/FB_high_level_api.pl
 SHA1 28124ae12cc0846f3fd2e25b2f614a69435e2860 examples/FB_low_level_api.pl
-SHA1 5d94bc10deff1dd74e4bc5dfa6fc015e39271f15 inc/Module/AutoInstall.pm
-SHA1 40106479d4e07f379cb82ca1d69fca92e3a40f47 inc/Module/Install.pm
-SHA1 34a24a530ecf0365cc02e4150b06c9bed702a441 inc/Module/Install/AutoInstall.pm
+SHA1 06c410f05488c1612ed66b06d3a86b2580581e4a inc/Module/AutoInstall.pm
+SHA1 8a924add836b60fb23b25c8506d45945e02f42f4 inc/Module/Install.pm
+SHA1 61ab1dd37e33ddbe155907ce51df8a3e56ac8bbf inc/Module/Install/AutoInstall.pm
 SHA1 c04f94f91fa97b9f8cfb5a36071098ab0e6c78e3 inc/Module/Install/AutoManifest.pm
-SHA1 ae8aa01a73cb83da31c39e8eed1120c59cb530a1 inc/Module/Install/Base.pm
-SHA1 5c87d2d0e2c08b5173259006c88ad81c24303f9d inc/Module/Install/Can.pm
-SHA1 98daf9d8c50b4b7e8988cf1fa2b86044ad219533 inc/Module/Install/Fetch.pm
-SHA1 f3e008113f7f49b0625083b6cc358a312854f613 inc/Module/Install/Include.pm
-SHA1 e67589fcbacdda6c98ff34d8e26a004ab0467bdc inc/Module/Install/Makefile.pm
-SHA1 209ea405d4ab94475661bb450d0ea042d2ec25b5 inc/Module/Install/Metadata.pm
+SHA1 2d0fad3bf255f8c1e7e1e34eafccc4f595603ddc inc/Module/Install/Base.pm
+SHA1 f0e01fff7d73cd145fbf22331579918d4628ddb0 inc/Module/Install/Can.pm
+SHA1 7328966e4fda0c8451a6d3850704da0b84ac1540 inc/Module/Install/Fetch.pm
+SHA1 66d3d335a03492583a3be121a7d888f63f08412c inc/Module/Install/Include.pm
+SHA1 b62ca5e2d58fa66766ccf4d64574f9e1a2250b34 inc/Module/Install/Makefile.pm
+SHA1 1aa925be410bb3bfcd84a16985921f66073cc1d2 inc/Module/Install/Metadata.pm
 SHA1 3b9281ddf7dd6d6f5de0a9642c69333023193c80 inc/Module/Install/Package.pm
-SHA1 b86d0385e10881db680d28bde94f275e49e34a27 inc/Module/Install/TrustMetaYml.pm
-SHA1 1326052d1df1065debee74f9d8583a734b9b3d00 inc/Module/Install/Win32.pm
-SHA1 bb607f3715c40fc3bc1c46496587cdb215bc4fa2 inc/Module/Install/WriteAll.pm
+SHA1 9de7b5129351499c048328dfa718d0eab557cf30 inc/Module/Install/TrustMetaYml.pm
+SHA1 e4196994fa75e98bdfa2be0bdeeffef66de88171 inc/Module/Install/Win32.pm
+SHA1 c3a6d0d5b84feb3280622e9599e86247d58b0d18 inc/Module/Install/WriteAll.pm
 SHA1 26d58a041cd6b3d21db98b32e8fd1841aae21204 inc/Module/Package.pm
-SHA1 6b807287940754cc31a3db59f2b22e363d5525be inc/Module/Package/Dist/RDF.pm
-SHA1 775bd24f2fdbb6dce51a8b5b0cdb01fccfce83c4 inc/Scalar/Util.pm
-SHA1 b1b664983568bf822c327599eb88e223483ae96a inc/Scalar/Util/PP.pm
-SHA1 eef6bff62046bff2ce08ba132d0b58fba30f40b4 inc/YAML/Tiny.pm
-SHA1 f5e6108ce7b8da158cf364af77daa91bdb918f8e lib/Finance/Bitcoin.pm
-SHA1 a59aaeb8a946e612aa9ca68cb5c7c3b8d6f905ce lib/Finance/Bitcoin/API.pm
-SHA1 199f92995534d0a6e447c618c85476cd22770df5 lib/Finance/Bitcoin/Address.pm
-SHA1 51152ee00fedf4da3e7dd7a5c76d80b5c02e06e5 lib/Finance/Bitcoin/Wallet.pm
-SHA1 57b15c56d609912435bdd68d2522ffe3a559771b meta/changes.ttl
+SHA1 63b942f1abf8f8cb3b468cc3a52d435650dfa042 inc/Module/Package/Dist/RDF.pm
+SHA1 ae92606512343264831f51fcf985b7f0b3e6e2ef inc/Scalar/Util.pm
+SHA1 feb933cefe2e3762e8322bd6071a2499f3440da1 inc/YAML/Tiny.pm
+SHA1 8105c0510a773b56840995fb4dd2dc64fe9ddaee inc/unicore/Name.pm
+SHA1 36df501c7c9b73c282c5174ed54d8283b2f2cbf2 inc/utf8.pm
+SHA1 83fb7cbffd5d3b867ec160547facba30aaa10611 lib/Finance/Bitcoin.pm
+SHA1 275e02d536d51efa957f6502a4cb185221386c3d lib/Finance/Bitcoin/API.pm
+SHA1 2e945d83f6d205e2af59bce86bba31b6633581e7 lib/Finance/Bitcoin/Address.pm
+SHA1 595f63574b227648b7cd9dba9d96649d54a8c082 lib/Finance/Bitcoin/Role/HasAPI.pm
+SHA1 d7a7536aa7a8a0053b28a2d43751457ee36ae644 lib/Finance/Bitcoin/Wallet.pm
+SHA1 443e8acdd60b66f5fe33bd8f70fedc8745654b24 meta/changes.ttl
 SHA1 a2a56cc4a38e1975b4d4d2eab64457cc1989809f meta/doap.ttl
-SHA1 51623f5e7588a943f4b21e1011a4966e1ce18578 meta/makefile.ttl
+SHA1 5bb60b19d80379a0d1c167674c0334c6ed8b7686 meta/makefile.ttl
 SHA1 c265facdc2053784bd7500afb7aa8e9350580a68 t/01basic.t
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.10 (GNU/Linux)
+Version: GnuPG v1.4.11 (GNU/Linux)
 
-iEYEARECAAYFAk7dPZYACgkQzr+BKGoqfTlrQQCgiFU4gPNu0hTWL7rg50ztf5xc
-rcgAn165WDD4XKDxZQE9qIYA4wJMd7a1
-=yGi9
+iEYEARECAAYFAlFHjwEACgkQzr+BKGoqfTneiwCgj6+GP6/I2oWKUvTVyK8QLXjV
+A9MAnjRi/zIU+fYHTILtqCFeYJBrpl56
+=2l3S
 -----END PGP SIGNATURE-----

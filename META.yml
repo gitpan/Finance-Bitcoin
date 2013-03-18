@@ -3,12 +3,12 @@ abstract: 'manage a bitcoin instance'
 author:
   - 'Toby Inkster <tobyink@cpan.org>'
 build_requires:
-  ExtUtils::MakeMaker: 6.42
-  Test::More: 0.61
+  ExtUtils::MakeMaker: 6.59
 configure_requires:
-  ExtUtils::MakeMaker: 6.42
+  ExtUtils::MakeMaker: 6.59
 distribution_type: module
-generated_by: 'Module::Install version 1.02'
+dynamic_config: 0
+generated_by: 'Module::Install version 1.06'
 keywords:
   - Bitcoin
   - Commerce
@@ -32,17 +32,13 @@ no_index:
     - t
     - xt
 requires:
-  Any::Moose: 0
-  Carp: 1.00
   JSON::RPC::Client: 0.93
+  Moo: 0
   Object::AUTHORITY: 0
-  Scalar::Util: 0
-  common::sense: 0
-  namespace::autoclean: 0
   perl: 5.10.0
 resources:
   bugtracker: http://rt.cpan.org/Dist/Display.html?Queue=Finance-Bitcoin
   homepage: https://metacpan.org/release/Finance-Bitcoin
   license: http://dev.perl.org/licenses/
   repository: http://goddamn.co.uk/svn-web/perlmods/browse/Finance-Bitcoin/
-version: 0.004
+version: 0.900

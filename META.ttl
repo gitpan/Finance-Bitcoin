@@ -1,0 +1,135 @@
+@prefix cpan:  <http://purl.org/NET/cpan-uri/person/> .
+@prefix cpant: <http://purl.org/NET/cpan-uri/terms#> .
+@prefix dc:    <http://purl.org/dc/terms/> .
+@prefix dcs:   <http://ontologi.es/doap-changeset#> .
+@prefix dist:  <http://purl.org/NET/cpan-uri/dist/Finance-Bitcoin/> .
+@prefix doap:  <http://usefulinc.com/ns/doap#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix nfo:   <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+dist:project
+	a                 doap:Project;
+	doap:name         "Finance-Bitcoin";
+	cpant:perl_version_from _:B1;
+	cpant:readme_from _:B1;
+	cpant:requires    "JSON::RPC::Client 0.93";
+	cpant:requires    "Moo";
+	cpant:requires    "Object::AUTHORITY";
+	cpant:version_from _:B1;
+	doap:bug-database <http://rt.cpan.org/Dist/Display.html?Queue=Finance-Bitcoin>;
+	doap:category     [ rdfs:label "JSONRPC"@en ];
+	doap:category     [ rdfs:label "JSON-RPC"@en ];
+	doap:category     [ rdfs:label "Finance"@en ];
+	doap:category     [ rdfs:label "Currency"@en ];
+	doap:category     [ rdfs:label "Currancy"@en ];
+	doap:category     [ rdfs:label "Bitcoin"@en ];
+	doap:category     [ rdfs:label "Micropayment"@en ];
+	doap:category     [ rdfs:label "Micropayments"@en ];
+	doap:category     [ rdfs:label "Commerce"@en ];
+	doap:created      "2010-07-26"^^xsd:date;
+	doap:developer    <http://tobyinkster.co.uk/#i>;
+	doap:documenter   <http://tobyinkster.co.uk/#i>;
+	doap:download-page <https://metacpan.org/release/Finance-Bitcoin>;
+	doap:homepage     <https://metacpan.org/release/Finance-Bitcoin>;
+	doap:license      <http://dev.perl.org/licenses/>;
+	doap:maintainer   <http://tobyinkster.co.uk/#i>;
+	doap:programming-language "Perl";
+	doap:release      dist:v_0-001;
+	doap:release      dist:v_0-002;
+	doap:release      dist:v_0-003;
+	doap:release      dist:v_0-004;
+	doap:release      dist:v_0-900;
+	doap:repository   [
+		a doap:SVNRepository;
+		doap:browse <http://goddamn.co.uk/svn-web/perlmods/browse/Finance-Bitcoin/>;
+	];
+	doap:shortdesc    "manage a bitcoin instance"@en;
+	doap:tester       <http://tobyinkster.co.uk/#i>.
+
+dist:v_0-001
+	a                 doap:Version;
+	dc:issued         "2010-07-26"^^xsd:date;
+	doap:file-release <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Finance-Bitcoin-0.001.tar.gz>;
+	doap:revision     "0.001"^^xsd:string;
+	rdfs:comment      "Original version"@en.
+
+dist:v_0-002
+	a                 doap:Version;
+	dc:issued         "2010-11-21"^^xsd:date;
+	dcs:changeset     [
+		dcs:item [
+			a dcs:Addition;
+			rdfs:label "Add $minconf parameter to Finance::Bitcoint::Account::received (patch from Pavel Karoukin)."@en;
+		];
+		dcs:versus dist:v_0-001;
+	];
+	doap:file-release <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Finance-Bitcoin-0.002.tar.gz>;
+	doap:revision     "0.002"^^xsd:string.
+
+dist:v_0-003
+	a                 doap:Version;
+	dc:issued         "2011-10-11"^^xsd:date;
+	dcs:changeset     [
+		dcs:item [ rdfs:label "use 5.010"@en ];
+		dcs:item [ rdfs:label "use common::sense"@en ];
+		dcs:item [
+			a dcs:Addition;
+			rdfs:label "Include examples in distribution."@en;
+		];
+		dcs:item [
+			a dcs:Packaging;
+			rdfs:label "Module::Package::RDF"@en;
+		];
+		dcs:versus dist:v_0-002;
+	];
+	doap:file-release <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Finance-Bitcoin-0.003.tar.gz>;
+	doap:revision     "0.003"^^xsd:string.
+
+dist:v_0-004
+	a                 doap:Version;
+	dc:issued         "2011-12-05"^^xsd:date;
+	dcs:changeset     [
+		dcs:item [
+			rdfs:label "Remove stub subs in BEGIN section. (They were only there for the benefit of Test::Pod::Coverage, but were causing problems.)"@en;
+			rdfs:seeAlso <https://rt.cpan.org/Public/Bug/Display.html?id=71713>;
+		];
+		dcs:item [
+			a dcs:Addition;
+			rdfs:label "use Object::AUTHORITY"@en;
+		];
+		dcs:item [
+			rdfs:label "Swap from Class::Accessor to Any::Moose."@en;
+		];
+		dcs:versus dist:v_0-003;
+	];
+	doap:file-release <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Finance-Bitcoin-0.004.tar.gz>;
+	doap:revision     "0.004"^^xsd:string.
+
+dist:v_0-900
+	a                 doap:Version;
+	dc:issued         "2013-03-18"^^xsd:date;
+	dcs:changeset     [
+		dcs:item [
+			a dcs:Update;
+			rdfs:label "Swap from Any::Moose to Moo."@en;
+		];
+		dcs:item [ rdfs:label "General tidy up."@en ];
+		dcs:versus dist:v_0-004;
+	];
+	doap:file-release <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Finance-Bitcoin-0.900.tar.gz>;
+	doap:revision     "0.900"^^xsd:string.
+
+<http://tobyinkster.co.uk/#i>
+	a                 foaf:Person;
+	foaf:name         "Toby Inkster";
+	foaf:homepage     <http://tobyinkster.co.uk/>;
+	foaf:mbox         <mailto:tobyink@cpan.org>;
+	foaf:page         <https://metacpan.org/author/TOBYINK>;
+	owl:sameAs        cpan:tobyink.
+
+_:B1
+	nfo:fileName      "lib/Finance/Bitcoin.pm".
+

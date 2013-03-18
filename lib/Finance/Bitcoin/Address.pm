@@ -1,66 +1,34 @@
 package Finance::Bitcoin::Address;
 
-use 5.010;
-use common::sense;
-use Carp;
-use Finance::Bitcoin;
-use Any::Moose;
-use Object::AUTHORITY;
-use Scalar::Util qw[blessed];
-
 BEGIN {
 	$Finance::Bitcoin::Address::AUTHORITY = 'cpan:TOBYINK';
-	$Finance::Bitcoin::Address::VERSION   = '0.004';
+	$Finance::Bitcoin::Address::VERSION   = '0.900';
 }
 
-has address => (is => 'ro');
-has api     => (is => 'rw');
+use 5.010;
+use Moo;
 
-around BUILDARGS => sub
-{
-	my $orig  = shift;
-	my $class = shift;
+use Carp;
+use Finance::Bitcoin;
+use Object::AUTHORITY;
+use Scalar::Util qw( blessed );
 
-	if (scalar @_ == 2
-	and $_[1] =~ /^1/
-	and (blessed($_[0]) || $_[0] =~ /^http/))
-	{
-		my ($api, $address) = @_;
+with "Finance::Bitcoin::Role::HasAPI";
 
-		unless (blessed($api) and $api->isa('Finance::Bitcoin::API'))
-		{
-			$api = $api ? 
-				Finance::Bitcoin::API->new(endpoint=>"$api") : 
-				Finance::Bitcoin::API->new;
-		}
-
-		return $class->$orig(api => $api, address => $address);
-	}
-	
-	else
-	{
-		return $class->$orig(@_);
-	}
-};
+has address => (is => "ro");
 
 sub label
 {
 	my $self = shift;
-
-	if (@_) # set
-	{
-		my $label = shift;
-		$self->api->call('setlabel', $self->address, $label);
-	}
-
-	return $self->api->call('getlabel', $self->address);
+	$self->api->call(setlabel => $self->address, @_) if @_;
+	return $self->api->call(getlabel => $self->address);
 }
 
 sub received
 {
-	my ($self, $minconf) = @_;
-	$minconf = 1 unless defined $minconf;
-	return $self->api->call('getreceivedbyaddress', $self->address, $minconf);
+	my $self = shift;
+	my ($minconf) = @_;
+	return $self->api->call(getreceivedbyaddress => $self->address, ($minconf//1));
 }
 
 1;
@@ -97,6 +65,12 @@ Bitcoin instance.
 Constructor. $endpoint may be the JSON RPC endpoint URL, or may be a
 Finance::Bitcoin::API object; $string is an address string.
 
+=begin trustme
+
+=item BUILDARGS
+
+=end trustme
+
 =item C<< address >>
 
 Returns the address string.
@@ -132,8 +106,13 @@ Toby Inkster E<lt>tobyink@cpan.orgE<gt>.
 
 =head1 COPYRIGHT
 
-Copyright 2010-2011 Toby Inkster
+Copyright 2010, 2011, 2013 Toby Inkster
 
 This library is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
 
+=head1 DISCLAIMER OF WARRANTIES
+
+THIS PACKAGE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED
+WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
+MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.

@@ -6,19 +6,24 @@ Home page:    <https://metacpan.org/release/Finance-Bitcoin>
 Bug tracker:  <http://rt.cpan.org/Dist/Display.html?Queue=Finance-Bitcoin>
 Maintainer:   Toby Inkster <mailto:tobyink@cpan.org>
 
+0.900  2013-03-18
+
+ - (Update) Swap from Any::Moose to Moo.
+ - General tidy up.
+
 0.004  2011-12-05
 
+ - (Addition) use Object::AUTHORITY
  - Remove stub subs in BEGIN section. (They were only there for the benefit
    of Test::Pod::Coverage, but were causing problems.)
  - Swap from Class::Accessor to Any::Moose.
- - (Addition) use Object::AUTHORITY
 
 0.003  2011-10-11
 
- - use 5.010
- - use common::sense
  - (Addition) Include examples in distribution.
  - (Packaging) Module::Package::RDF
+ - use 5.010
+ - use common::sense
 
 0.002  2010-11-21
 
