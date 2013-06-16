@@ -2,7 +2,7 @@ package Finance::Bitcoin::Role::HasAPI;
 
 BEGIN {
 	$Finance::Bitcoin::Role::HasAPI::AUTHORITY = 'cpan:TOBYINK';
-	$Finance::Bitcoin::Role::HasAPI::VERSION   = '0.900';
+	$Finance::Bitcoin::Role::HasAPI::VERSION   = '0.901';
 }
 
 use Moo::Role;
@@ -40,6 +40,16 @@ __END__
 =head1 NAME
 
 Finance::Bitcoin::Role::HasAPI - role for objects with an "api" attribute
+
+=head1 DESCRIPTION
+
+=over
+
+=item C<< api >>
+
+Returns an instance of L<Finance::Bitcoin::API>.
+
+=back
 
 =head1 AUTHOR
 

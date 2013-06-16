@@ -6,6 +6,11 @@ Home page:    <https://metacpan.org/release/Finance-Bitcoin>
 Bug tracker:  <http://rt.cpan.org/Dist/Display.html?Queue=Finance-Bitcoin>
 Maintainer:   Toby Inkster <mailto:tobyink@cpan.org>
 
+0.901  2013-06-16
+
+ - (Bugfix Update) JSON::RPC::Client -> JSON::RPC::Legacy::Client.
+   ++$CAVAC
+
 0.900  2013-03-18
 
  - (Update) Swap from Any::Moose to Moo.

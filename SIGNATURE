@@ -14,13 +14,14 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 8ceed6ba74e79bf36435b85311003d68825ba84c COPYRIGHT
-SHA1 3426fd465e0ba7dc583faefd2cec46583a1ecb77 Changes
-SHA1 58e47fed556f626572681c48158a3ecd44ce179d HACKING
+SHA1 294505f858f11dd062e9916e3f50d88210a9ef54 CONTRIBUTING
+SHA1 6b0effd30289e0d32ead2ed7428bc6cf30b750dc COPYRIGHT
+SHA1 203a48e284d126bcb813fb6d7740120c4b1463d3 CREDITS
+SHA1 8d6cd7060d3040c14bc7928d92e3e0e58cdab9ae Changes
 SHA1 937d452c5c4069f4cda9ffaf45a33f1eb5f060e8 LICENSE
-SHA1 463c58fd3536e894a20c87bb1a25f10335c4c91c MANIFEST
-SHA1 a057294a59823d94d998e74c5c5cf46b7dd0a767 META.ttl
-SHA1 04febc4137e1a50e3aaf2c8730557578ac321978 META.yml
+SHA1 43c7958eb7275c297d47d4969b65fe8a2ced035c MANIFEST
+SHA1 271f36ebb58f43cff5b6d50ad0c566b784dee60a META.ttl
+SHA1 882bbe7f2776408d0884f0320843289084844c1e META.yml
 SHA1 7d65b6447bdb20b1734b465650073c4b6989ea0c Makefile.PL
 SHA1 a1cb83c50901f37aab3d7b5194eb596ab71f794c README
 SHA1 a8e74deb9ea3ddb60b6385baeeff9d85fa2d693c TODO
@@ -37,28 +38,25 @@ SHA1 66d3d335a03492583a3be121a7d888f63f08412c inc/Module/Install/Include.pm
 SHA1 b62ca5e2d58fa66766ccf4d64574f9e1a2250b34 inc/Module/Install/Makefile.pm
 SHA1 1aa925be410bb3bfcd84a16985921f66073cc1d2 inc/Module/Install/Metadata.pm
 SHA1 3b9281ddf7dd6d6f5de0a9642c69333023193c80 inc/Module/Install/Package.pm
-SHA1 9de7b5129351499c048328dfa718d0eab557cf30 inc/Module/Install/TrustMetaYml.pm
+SHA1 41f76ff6b39368a65da86377e43b34bacc2fb0eb inc/Module/Install/TrustMetaYml.pm
 SHA1 e4196994fa75e98bdfa2be0bdeeffef66de88171 inc/Module/Install/Win32.pm
 SHA1 c3a6d0d5b84feb3280622e9599e86247d58b0d18 inc/Module/Install/WriteAll.pm
 SHA1 26d58a041cd6b3d21db98b32e8fd1841aae21204 inc/Module/Package.pm
-SHA1 63b942f1abf8f8cb3b468cc3a52d435650dfa042 inc/Module/Package/Dist/RDF.pm
-SHA1 ae92606512343264831f51fcf985b7f0b3e6e2ef inc/Scalar/Util.pm
+SHA1 5a2f84a7a82eee0d1e5ed3628fe503a608efc10f inc/Module/Package/Dist/RDF.pm
 SHA1 feb933cefe2e3762e8322bd6071a2499f3440da1 inc/YAML/Tiny.pm
-SHA1 8105c0510a773b56840995fb4dd2dc64fe9ddaee inc/unicore/Name.pm
-SHA1 36df501c7c9b73c282c5174ed54d8283b2f2cbf2 inc/utf8.pm
-SHA1 83fb7cbffd5d3b867ec160547facba30aaa10611 lib/Finance/Bitcoin.pm
-SHA1 275e02d536d51efa957f6502a4cb185221386c3d lib/Finance/Bitcoin/API.pm
-SHA1 2e945d83f6d205e2af59bce86bba31b6633581e7 lib/Finance/Bitcoin/Address.pm
-SHA1 595f63574b227648b7cd9dba9d96649d54a8c082 lib/Finance/Bitcoin/Role/HasAPI.pm
-SHA1 d7a7536aa7a8a0053b28a2d43751457ee36ae644 lib/Finance/Bitcoin/Wallet.pm
-SHA1 443e8acdd60b66f5fe33bd8f70fedc8745654b24 meta/changes.ttl
+SHA1 42d5419fbd2cdf5d3df67033c6d5c9f46b34aa32 lib/Finance/Bitcoin.pm
+SHA1 4091c6975e19acf6fee897b3fbd3a419a42d941d lib/Finance/Bitcoin/API.pm
+SHA1 33623ee60a0383a6a50f33e66440aaca8eb468e4 lib/Finance/Bitcoin/Address.pm
+SHA1 502a44a4cedca44cbbed324e60b3ae847e03145c lib/Finance/Bitcoin/Role/HasAPI.pm
+SHA1 a961270278befa0e9892f630ef5c1969b6228a10 lib/Finance/Bitcoin/Wallet.pm
+SHA1 acd29a8538d93fa83d857ef934cc0893beeffd03 meta/changes.ttl
 SHA1 a2a56cc4a38e1975b4d4d2eab64457cc1989809f meta/doap.ttl
-SHA1 5bb60b19d80379a0d1c167674c0334c6ed8b7686 meta/makefile.ttl
+SHA1 1cd2f914b7fd3999b55f199564e9d28e60b7d1b3 meta/makefile.ttl
 SHA1 c265facdc2053784bd7500afb7aa8e9350580a68 t/01basic.t
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.11 (GNU/Linux)
+Version: GnuPG v1.4.12 (GNU/Linux)
 
-iEYEARECAAYFAlFHjwEACgkQzr+BKGoqfTneiwCgj6+GP6/I2oWKUvTVyK8QLXjV
-A9MAnjRi/zIU+fYHTILtqCFeYJBrpl56
-=2l3S
+iEYEARECAAYFAlG+L6AACgkQzr+BKGoqfTkxkACgmHntsQ8khL9Xz+EXszgKBPlq
+GN0An3avWYn6L2GRADpLiBFaDDhXxDfz
+=Iz31
 -----END PGP SIGNATURE-----

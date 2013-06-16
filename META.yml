@@ -32,7 +32,7 @@ no_index:
     - t
     - xt
 requires:
-  JSON::RPC::Client: 0.93
+  JSON::RPC::Legacy::Client: 0.93
   Moo: 0
   Object::AUTHORITY: 0
   perl: 5.10.0
@@ -41,4 +41,4 @@ resources:
   homepage: https://metacpan.org/release/Finance-Bitcoin
   license: http://dev.perl.org/licenses/
   repository: http://goddamn.co.uk/svn-web/perlmods/browse/Finance-Bitcoin/
-version: 0.900
+version: 0.901
