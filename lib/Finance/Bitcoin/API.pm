@@ -2,15 +2,12 @@ package Finance::Bitcoin::API;
 
 BEGIN {
 	$Finance::Bitcoin::API::AUTHORITY = 'cpan:TOBYINK';
-	$Finance::Bitcoin::API::VERSION   = '0.901';
+	$Finance::Bitcoin::API::VERSION   = '0.902';
 }
 
 use 5.010;
 use Moo;
-
 use JSON::RPC::Legacy::Client;
-use Moo;
-use Object::AUTHORITY;
 use Scalar::Util qw( blessed );
 
 has endpoint => (is => "rw",   default => sub { "http://127.0.0.1:8332/" });
@@ -79,6 +76,25 @@ Constructor. %args is a hash of named arguments. You need to provide the
 
 Call a method. If successful returns the result; otherwise returns undef.
 
+B<< Caveat: >> The protocol used to communicate with the Bitcoin daemon
+is JSON-RPC based. JSON differentiates between numbers and strings:
+C<< "1" >> and C<< 1 >> are considered to be different values. Perl
+(mostly) does not. Thus the L<JSON> module often needs to guess whether
+a parameter (i.e. an item in C<< @params >>) is supposed to be a number
+or a string. If it guesses incorrectly, this may result in the wrong
+JSON getting sent to the Bitcoin daemon, and the daemon thus returning
+an error. To persuade L<JSON> to encode a value as a number, add zero to
+it; to persuade L<JSON> to encode a value as a string, interpolate it.
+For example:
+
+   $api->call(
+      "sendfrom",
+      "$from_adr",  # Str
+      "$to_adr",    # Str
+      $btc + 0,     # Num
+      6,            # literal: perl already knows this is a Num
+   );
+
 =item C<< endpoint >>
 
 Get/set the endpoint URL.
@@ -111,7 +127,7 @@ Toby Inkster E<lt>tobyink@cpan.orgE<gt>.
 
 =head1 COPYRIGHT
 
-Copyright 2010, 2011, 2013 Toby Inkster
+Copyright 2010, 2011, 2013, 2014 Toby Inkster
 
 This library is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
